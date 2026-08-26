@@ -8,5 +8,5 @@ import { PokemonEntity } from '../../models/pokemon.entity';
   styleUrl: './pokemon-card.css',
 })
 export class PokemonCard {
-  pokemon = input<PokemonEntity>();
+  pokemon = input<PokemonEntity>()
 }
