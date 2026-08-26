@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { PokemonEntity } from '../../models/pokemon.entity';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './pokemon-card.html',
   styleUrl: './pokemon-card.css',
 })
-export class PokemonCard {}
+export class PokemonCard {
+  pokemon = input<PokemonEntity>();
+}
