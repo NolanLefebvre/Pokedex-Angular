@@ -1,12 +1,17 @@
 <section class="pokemon-list">
-
+  <input
+    #search
+    type="text"
+    placeholder="Rechercher un Pokémon…"
+    (input)="onSearchInput(search.value)"
+  />
   @if (loading()) {
     <p>Chargement…</p>
   } @else if (error()) {
     <p class="error">{{ error() }}</p>
   } @else {
     <div class="pokemon">
-      @for (p of allPokemons(); track p.id) {
+      @for (p of filteredPokemons(); track p.id) {
         <app-pokemon-card [pokemon]="p"></app-pokemon-card>
       } @empty {
         <p>Aucun Pokémon trouvé.</p>
